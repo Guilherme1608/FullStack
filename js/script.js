@@ -1,41 +1,19 @@
-// Função para exibir uma mensagem de boas-vindas ao carregar a página
-document.addEventListener("DOMContentLoaded", () => {
-  // Exibe uma mensagem de boas-vindas
-  alert("Bem-vindo ao Projeto Profissional!");
-});
+$(document).ready(function () {
+  // Initialize tooltips
+  $('[data-toggle="tooltip"]').tooltip();
 
-// Função para adicionar um efeito de hover aos botões
-const buttons = document.querySelectorAll(".btn");
+  // Example of dynamically loading content into the modal
+  $("#exampleModal").on("show.bs.modal", function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var recipient = button.data("whatever"); // Extract info from data-* attributes
 
-buttons.forEach((button) => {
-  button.addEventListener("mouseover", () => {
-    button.style.backgroundColor = "#004080";
-    button.style.borderColor = "#003366";
+    var modal = $(this);
+    modal.find(".modal-title").text("New Order for " + recipient);
+    modal.find(".modal-body input").val(recipient);
   });
 
-  button.addEventListener("mouseout", () => {
-    button.style.backgroundColor = "#0056b3";
-    button.style.borderColor = "#004080";
+  // Add a button click event
+  $(".btn-primary").on("click", function () {
+    alert("Button clicked!");
   });
-});
-
-// Função para carregar o conteúdo dinamicamente na card
-function loadCardContent(cardId, content) {
-  const card = document.getElementById(cardId);
-  if (card) {
-    const cardBody = card.querySelector(".card-body");
-    if (cardBody) {
-      cardBody.innerHTML = content;
-    }
-  }
-}
-
-// Exemplo de carregamento dinâmico de conteúdo
-document.addEventListener("DOMContentLoaded", () => {
-  const content = `
-        <h5 class="card-title">Conteúdo Dinâmico</h5>
-        <p class="card-text">Este conteúdo foi carregado dinamicamente com JavaScript.</p>
-        <a href="#" class="btn btn-primary">Saiba Mais</a>
-    `;
-  loadCardContent("card-1", content); // Substitua 'card-1' pelo ID do card que deseja atualizar
 });
