@@ -1,0 +1,20 @@
+/* Custom CSS */
+body {
+  font-size: 0.875rem;
+}
+
+.sidebar {
+  height: 100vh;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.table-responsive {
+  margin-bottom: 30px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
