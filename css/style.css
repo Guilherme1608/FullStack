@@ -1,20 +1,66 @@
-/* Custom CSS */
+/* Cores e fontes globais */
 body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: #fff;
+}
+
+footer {
+  background-color: #343a40;
+  color: #adb5bd;
+}
+
+/* Estilização das cards */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+/* Botões personalizados */
+.btn-primary {
+  background-color: #0056b3;
+  border-color: #004080;
+}
+
+.btn-primary:hover {
+  background-color: #004080;
+  border-color: #003366;
+}
+
+/* Footer */
+footer {
   font-size: 0.875rem;
 }
 
-.sidebar {
-  height: 100vh;
-}
-
-.sidebar .nav-link.active {
-  color: #007bff;
-}
-
-.table-responsive {
-  margin-bottom: 30px;
-}
-
-.card {
-  margin-bottom: 20px;
+/* Responsividade */
+@media (max-width: 767.98px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  .card-title {
+    font-size: 1.125rem;
+  }
 }
